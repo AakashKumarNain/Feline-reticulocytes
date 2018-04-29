@@ -1,0 +1,14 @@
+item {
+  id: 1
+  name: 'erythrocyte'
+}
+
+item {
+  id: 2
+  name: 'punctate reticulocyte'
+}
+
+item {
+  id: 3
+  name: 'aggregate reticulocyte'
+}
