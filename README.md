@@ -110,11 +110,11 @@ I chose MobileNetv2 as the model for training for two reasons:
 
 I fine-tuned the model for 16K steps but after 14K steps, I couldn't see any performance improvement. In fact, the mAP started to decrease after that. 
 
-Here is the total loss curve as the training proceeded
+Here is the **total loss** curve as the training proceeded
 
 ![ALT total loss](/model_evaluation/loss.png)
 
-mAP score
+#### mAP score
 
 ![ALT mAP score](/model_evaluation/PASCALVOCmAP.png)
 
