@@ -1,5 +1,5 @@
 # Feline-reticulocytes
----
+
 
 # Feline?
 **Feline** is a member of the family **Felidae**. The family consists of 37 cat species that among others include the cheetah, puma, jaguar, leopard, lion, lynx, tiger, and domestic cat. For a detailed description, click [here](https://en.wikipedia.org/wiki/Felidae)
@@ -8,7 +8,7 @@
 **Reticulocytes** are immature red blood cells having a granular or reticulated appearance when suitably stained. You may wonder why this matters at all. After all, these are just immature blood cells but the fact is that a reticulocyte percentage that is higher than "normal" can be a sign of anemia. Anemia is one of the most frequent hematological abnormalities found in cats.
 If you want to dig in about the disease and its causes, you can visit this [page](http://vetbook.org/wiki/cat/index.php?title=Anaemia)
 
-# How can deep learning help in this?
+# How can deep learning help in this use case?
 Detecting and counting reticulocytes is time consuming. Also, it's not very easy to differentiate between different types of reticulocytes. This whole process from blood test to the time taken for confirmation by the vets is the time wasted just for the confirmation of disease. When not treated on time, anameia can be dangerous. Hence we need something that can aid the doctors to quickly identify the disease at an early stage. 
 
 With the rise of deep learning in computer vision, one thing that has heavily improved over time is object detection and localization. The big question is: Can these state of the art object detectors be of any use in this scenario? And the answer is yes!!
@@ -21,6 +21,7 @@ If you haven't read [this](https://arxiv.org/abs/1801.04381), then I would sugge
 # Dataset
 The Feline-reticulocytes dataset was obtained from [Kaggle](https://www.kaggle.com/tentotheminus9/feline-reticulocytes). You can download it and look at the dataset how it has been arranged. For example, this is a sample image from the dataset
 
+[[./images/000045.jpg]|alt=sample]
 
 And the corresponding labels for the objects present in this image are arranged in an xml which looks like this:
 
@@ -88,3 +89,31 @@ There are 1086 images in total for training data. Each image can either have a s
 ---
 
 # Dependencies
+* Python>=2.7 or Python>=3.5
+* TensorFlow==1.7
+* pandas>=0.22
+* scikit-learn>=0.19
+* scikit-image
+* Pillow
+* [Tensorflow models](https://github.com/tensorflow/models)
+
+---
+
+# Training
+In order to start training a particular object detection mode on your dataset, you need to follow a couple of steps. Becuase I already have put these steps on a [Kaggle Kernel](https://www.kaggle.com/aakashnain/eda2modelling-tf-object-detection-api), I would keep this readme short as of now.
+
+I chose MobileNetv2 as the model for training for two reasons:
+* It's new and incredibly fast
+* State of the art in terms of mobile models
+
+I fine-tuned the model for 16K steps but after 14K steps, I couldn't see any performance improvement. In fact, the mAP started to decrease after that. 
+
+Here is the total loss curve as the training proceeded
+
+[[./model_evaluation/loss.png]|alt=sample]
+
+mAP score
+
+[[./model_evaluation/PASCALVOCmAP.png]|alt=sample]
+
+You can find the fine-tune weights of this model along with the frozen grapg in the model_evaluation directory in this repo.
