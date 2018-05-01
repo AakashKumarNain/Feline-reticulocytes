@@ -21,7 +21,7 @@ If you haven't read [this](https://arxiv.org/abs/1801.04381), then I would sugge
 # Dataset
 The Feline-reticulocytes dataset was obtained from [Kaggle](https://www.kaggle.com/tentotheminus9/feline-reticulocytes). You can download it and look at the dataset how it has been arranged. For example, this is a sample image from the dataset
 
-[[./images/000045.jpg]|alt=sample]
+[[/images/000045.jpg]|alt=sample]
 
 And the corresponding labels for the objects present in this image are arranged in an xml which looks like this:
 
@@ -110,10 +110,10 @@ I fine-tuned the model for 16K steps but after 14K steps, I couldn't see any per
 
 Here is the total loss curve as the training proceeded
 
-[[./model_evaluation/loss.png]|alt=sample]
+[[/model_evaluation/loss.png]|alt=sample]
 
 mAP score
 
-[[./model_evaluation/PASCALVOCmAP.png]|alt=sample]
+[[/model_evaluation/PASCALVOCmAP.png]|alt=sample]
 
 You can find the fine-tune weights of this model along with the frozen grapg in the model_evaluation directory in this repo.
