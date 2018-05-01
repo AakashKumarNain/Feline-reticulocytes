@@ -22,6 +22,7 @@ If you haven't read [this](https://arxiv.org/abs/1801.04381), then I would sugge
 The Feline-reticulocytes dataset was obtained from [Kaggle](https://www.kaggle.com/tentotheminus9/feline-reticulocytes). You can download it and look at the dataset how it has been arranged. For example, this is a sample image from the dataset
 
 [[/images/000045.jpg]|alt=sample]
+![ALT sample](/images/000045.jpg)
 
 And the corresponding labels for the objects present in this image are arranged in an xml which looks like this:
 
