@@ -6,15 +6,15 @@
 
 # What are reticulocytes?
 **Reticulocytes** are immature red blood cells having a granular or reticulated appearance when suitably stained. You may wonder why this matters at all. After all, these are just immature blood cells but the fact is that a reticulocyte percentage that is higher than "normal" can be a sign of anemia. Anemia is one of the most frequent hematological abnormalities found in cats.
-If you want to dig in about the disease and its causes, you can visit this [page](http://vetbook.org/wiki/cat/index.php?title=Anaemia)
+If you want to dig in more about the disease and its causes, you can visit this [page](http://vetbook.org/wiki/cat/index.php?title=Anaemia)
 
 # How can deep learning help in this use case?
-Detecting and counting reticulocytes is time consuming. Also, it's not very easy to differentiate between different types of reticulocytes. This whole process from blood test to the time taken for confirmation by the vets is the time wasted just for the confirmation of disease. When not treated on time, anameia can be dangerous. Hence we need something that can aid the doctors to quickly identify the disease at an early stage. 
+Detecting and counting reticulocytes is time consuming. Also, it's not very easy to differentiate between different types of reticulocytes. This whole process from blood test to the time taken for analysis by the vets is the time wasted just for the confirmation of disease. When not treated on time, anameia can be dangerous. Hence we need something that can aid the doctors to quickly identify the disease at an early stage. 
 
-With the rise of deep learning in computer vision, one thing that has heavily improved over time is object detection and localization. The big question is: Can these state of the art object detectors be of any use in this scenario? And the answer is yes!!
+With the rise of deep learning in computer vision, one thing that has heavily improved over time is object detection and object localization. The big question is: Can these state of the art object detectors be of any use in this scenario? Yes, they are!!
 
 For training, I used [TF object detection API](https://github.com/tensorflow/models/tree/master/research/object_detection). Recently, MobileNetv2 came out, the next generation of mobile nets which does an awesome job on the speed and accuracy tradeoff.
-If you haven't read [this](https://arxiv.org/abs/1801.04381), then I would suggest you give it a read first. Also, I am assuming that you how Single shot detectors work. Although in-depth knowledge of that isn't required but until unless you understand it, it's harder to debug the network in the conditions when it's not working. 
+If you haven't read [this paper](https://arxiv.org/abs/1801.04381), then I would suggest you give it a read first. Also, I am assuming that you know how single shot detectors work. Although in-depth knowledge of that isn't required but until unless you understand it, it's harder to debug the network in the conditions when it's not working. 
 
 ---
 
@@ -108,7 +108,7 @@ I chose MobileNetv2 as the model for training for two reasons:
 * It's new and incredibly fast
 * State of the art in terms of mobile models
 
-I fine-tuned the model for 16K steps but after 14K steps, I couldn't see any performance improvement. In fact, the mAP started to decrease after that. 
+I fine-tuned the model for 16K steps but after 14K steps I couldn't see any performance improvement. In fact, the mAP started to decrease after that. 
 
 Here is the **total loss** curve as the training proceeded
 
@@ -119,3 +119,10 @@ Here is the **total loss** curve as the training proceeded
 ![ALT mAP score](/model_evaluation/PASCALVOCmAP.png)
 
 You can find the fine-tuned weights for this model along with the frozen graph in the model_evaluation directory in this repo.
+
+
+# Results
+![ALT example1](/images/test1.png)
+![ALT example2](/images/test2.png)
+![ALT example3](/images/test3.png)
+![ALT example4](/images/test4.png)
