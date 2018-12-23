@@ -114,9 +114,6 @@ Here is the **total loss** curve as the training proceeded
 
 ![ALT total loss](/model_evaluation/loss.png)
 
-#### mAP score
-
-![ALT mAP score](/model_evaluation/PASCALVOCmAP.png)
 
 You can find the fine-tuned weights for this model along with the frozen graph in the model_evaluation directory in this repo.
 
